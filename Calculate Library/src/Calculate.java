@@ -25,4 +25,16 @@ public class Calculate {
 		double average=(operand + operand)/2;
 		return average;
 	}
+/* This method takes three doubles and returns a double.
+ 
+	public static double average( operand) {
+		double average;
+		average=(operand )/3;
+		return average;
+	}*/
+/* This method takes an angle measure given in degreees into radians. double=>double
+ */
+	public static double toDegrees(double operand) {
+		double toDegrees=(operand)
+	}
 }
