@@ -8,7 +8,7 @@ public class DoMath {
 		System.out.println(Calculate.square(5));
 		System.out.println(Calculate.cube(2));
 		System.out.println(Calculate.average(3.0));
-		
+		System.out.println(Calculate.toDegrees(4));
 	}
 
 }
