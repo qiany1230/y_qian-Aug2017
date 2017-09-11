@@ -38,4 +38,50 @@ public class Calculate {
 		double toDegrees=180/(operand*3.14159);
 		return toDegrees;
 	}
+/* This method takes an angle measure given in degrees into radians. double=>double
+ */
+	public static double toRadians(double operand) {
+		double toRadians=180/(operand*3.14159);
+		return toRadians;
+	}
+/* This method takes three doubles and returns a double.
+ */
+	public static double discriminant(double a, double b, double c,"x") {
+		double discriminant=a"x^2"+b"x"+c;
+		return discriminant;
+	}
+/* This method takes three integers and returns a String.
+ */
+	public static int toImproperFrac(int a, int b, int c,) {
+		int toImproperFrac=a*c+1"/"c;
+		return toImproperFrac;
+	}
+/* This method takes two integers and returns a String.
+ */
+	public static int toMixedNum(int a, int b) {
+		int toMixNum=a/b_a%b;
+		return toMixNum;
+	}
+/* This method takes four integers and returns a String.
+ */
+	public static int foil(int a, int b, int c, int d,"n") {
+		int foil=a*c"n"+(a*d-b*c)+b*d;
+		return foil;
+	}
+/* This method takes two integers and returns a boolean.
+ */
+	public static boolean isDivisibleBy(int a, int b) {
+		return a%b==0;
+	}
+/* This method takes a double and returns a double.
+ */
+	public static double absValue(double operand) {
+		double absValue=|operand|;
+		return absValue;
+	}
+/* This method takes two doubles and returns a double.
+ */
+	public static double max(double a, double b) {
+		if a<=b;
+		return 
 }
