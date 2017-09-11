@@ -32,9 +32,10 @@ public class Calculate {
 		average=(operand )/3;
 		return average;
 	}*/
-/* This method takes an angle measure given in degreees into radians. double=>double
+/* This method takes an angle measure given in radians into degrees. double=>double
  */
 	public static double toDegrees(double operand) {
-		double toDegrees=(operand)
+		double toDegrees=180/(operand*3.14159);
+		return toDegrees;
 	}
 }
