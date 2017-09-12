@@ -46,14 +46,14 @@ public class Calculate {
 	}
 /* This method takes three doubles and returns a double.
  */
-	public static double discriminant(double a, double b, double c,"x") {
-		double discriminant=a"x^2"+b"x"+c;
+	public static double discriminant(double a, double b, double c) {
+		double discriminant=a+b+c;
 		return discriminant;
 	}
 /* This method takes three integers and returns a String.
  */
-	public static int toImproperFrac(int a, int b, int c,) {
-		int toImproperFrac=a*c+1"/"c;
+	public static int toImproperFrac(int a, int b, int c) {
+		int toImproperFrac=a*c+1/c;
 		return toImproperFrac;
 	}
 /* This method takes two integers and returns a String.
@@ -76,12 +76,12 @@ public class Calculate {
 /* This method takes a double and returns a double.
  */
 	public static double absValue(double operand) {
-		double absValue=|operand|;
+		double absValue=operand;
 		return absValue;
 	}
 /* This method takes two doubles and returns a double.
  */
-	public static double max(double a, double b) {
+/*	public static double max(double a, double b) {
 		if a<=b;
-		return 
+		return */
 }
