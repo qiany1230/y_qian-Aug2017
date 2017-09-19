@@ -35,7 +35,7 @@ public class Calculate {
 /* This method takes an angle measure given in radians into degrees. double=>double
  */
 	public static double toDegrees(double operand) {
-		double toDegrees=180/(operand*3.14159);
+		double toDegrees=(operand*180)/3.14159;
 		return toDegrees;
 	}
 /* This method takes an angle measure given in degrees into radians. double=>double
@@ -47,13 +47,14 @@ public class Calculate {
 /* This method takes three doubles and returns a double.
  */
 	public static double discriminant(double a, double b, double c) {
-		double discriminant=a+b+c;
+		double discriminant=(b*b) - (4*a*c);
 		return discriminant;
 	}
 /* This method takes three integers and returns a String.
  */
 	public static int toImproperFrac(int a, int b, int c) {
-		int toImproperFrac=a*c+1/c;
+		int d= (a*c)+b;
+		String toImproperFrac=d + "/" + c;
 		return toImproperFrac;
 	}
 /* This method takes two integers and returns a String.
