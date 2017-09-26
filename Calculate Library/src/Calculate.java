@@ -26,12 +26,12 @@ public class Calculate {
 		return average;
 	}
 /* This method takes three doubles and returns a double.
- 
-	public static double average( operand) {
+ */
+	public static double average(double a, double b, double c) {
 		double average;
-		average=(operand )/3;
+		average=(a+b+c)/3;
 		return average;
-	}*/
+	}
 /* This method takes an angle measure given in radians into degrees. double=>double
  */
 	public static double toDegrees(double operand) {
@@ -52,30 +52,41 @@ public class Calculate {
 	}
 /* This method takes three integers and returns a String.
  */
-	public static int toImproperFrac(int a, int b, int c) {
+	public static String toImproperFrac(int a, int b, int c) {
 		int d= (a*c)+b;
 		String toImproperFrac=d + "/" + c;
 		return toImproperFrac;
 	}
 /* This method takes two integers and returns a String.
  */
-	public static int toMixedNum(int a, int b) {
-		int toMixNum=a/b_a%b;
-		return toMixNum;
+	public static String toMixedNum(int a, int b) {
+		int whole = a/b;
+		int remain = a%b;
+		String toMixedNum = whole + "_" + remain + "/" + b; 
+		return toMixedNum;
 	}
 /* This method takes four integers and returns a String.
  */
-	public static int foil(int a, int b, int c, int d,"n") {
-		int foil=a*c"n"+(a*d-b*c)+b*d;
+	public static String foil(int a, int b, int c, int d, String n) {
+		int first = a*c;
+		int second = a*d+b*c;
+		int third = c*d;
+		String foil= first + "n^2 + " + second + "n +" + third;
 		return foil;
 	}
 /* This method takes two integers and returns a boolean.
  */
-	public static boolean isDivisibleBy(int a, int b) {
-		return a%b==0;
+	public static String DivisibleBy(int a, int b) {
+		
+		if (a%b == 0) {
+			return "yes";
+		}
+		else {
+			return "no";					
+		}
 	}
 /* This method takes a double and returns a double.
- */
+ */ /*
 	public static double absValue(double operand) {
 		double absValue=operand;
 		return absValue;
