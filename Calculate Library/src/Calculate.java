@@ -76,7 +76,7 @@ public class Calculate {
 	}
 /* This method takes two integers and returns a boolean.
  */
-	public static String DivisibleBy(int a, int b) {
+	public static boolean DivisibleBy(int a, int b) {
 		
 		if (a%b == 0) {
 			return "yes";
@@ -86,14 +86,55 @@ public class Calculate {
 		}
 	}
 /* This method takes a double and returns a double.
- */ /*
+ */
 	public static double absValue(double operand) {
-		double absValue=operand;
-		return absValue;
+		if(operand <=0) {
+			return (operand*1);
+		}else {
+			return operand;
+		}
 	}
 /* This method takes two doubles and returns a double.
  */
-/*	public static double max(double a, double b) {
-		if a<=b;
-		return */
+	public static double max(double a, double b) {
+		if (a > b){
+			return a;
+		}else {
+			return b;
+		}
+/* This method takes three doubles and returns a double.
+ */
+	public static double max(double a, double b, double c) {
+		if (a > b && a > c){
+			return a;
+		}if (b > a && b > c){
+			return b;
+		}else {
+			return c;
+		}
+/* This method takes two integers and returns an integer.
+ */
+	public static int min(int a, int b) {
+		if (a < b) {
+			return a;
+		}else {
+			return b;
+		}
+/* This method takes a double and returns a double.
+ */
+	public static double round2(double a) {
+		double b = a*1000;
+		double c = b%10;
+		
+		if (c < 0.5) {
+			return (a - (c / 100);
+		}else {
+			int d = a*100;
+			return (d/100.0+0.01);
+		}
+/* This method takes a double and an integer and returns a double.
+ */
+	public static double exponent(double a, int b) {
+		
+			
 }
