@@ -76,8 +76,7 @@ public class Calculate {
 	}
 /* This method takes two integers and returns a boolean.
  */
-	public static boolean DivisibleBy(int a, int b) {
-		
+	public static String DivisibleBy(int a, int b) {
 		if (a%b == 0) {
 			return "yes";
 		}
@@ -102,6 +101,7 @@ public class Calculate {
 		}else {
 			return b;
 		}
+	}
 /* This method takes three doubles and returns a double.
  */
 	public static double max(double a, double b, double c) {
@@ -112,6 +112,7 @@ public class Calculate {
 		}else {
 			return c;
 		}
+	}
 /* This method takes two integers and returns an integer.
  */
 	public static int min(int a, int b) {
@@ -120,6 +121,7 @@ public class Calculate {
 		}else {
 			return b;
 		}
+	}
 /* This method takes a double and returns a double.
  */
 	public static double round2(double a) {
@@ -134,7 +136,7 @@ public class Calculate {
 		}
 /* This method takes a double and an integer and returns a double.
  */
-	public static double exponent(double a, int b) {
+//	public static double exponent(double a, int b) {
 		
-			
+	}	
 }
