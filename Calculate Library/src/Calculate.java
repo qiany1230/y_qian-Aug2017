@@ -146,6 +146,8 @@ private static final boolean no = false;
 		}
 		return prod;
 	}
+	
+	//
 /* This method takes an integer and returns an interger.
  */
 	public static int factorial(int num) {
