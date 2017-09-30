@@ -5,6 +5,8 @@
 
 public class Calculate {
 
+private static final boolean yes = false;
+private static final boolean no = false;
 /* This method takes an integer and returns its square. 
  */
 	public static int square(int operand) {
@@ -76,12 +78,12 @@ public class Calculate {
 	}
 /* This method takes two integers and returns a boolean.
  */
-	public static String DivisibleBy(int a, int b) {
+	public static boolean isDivisibleBy(int a, int b) {
 		if (a%b == 0) {
-			return "yes";
+			return yes;
 		}
 		else {
-			return "no";					
+			return no;					
 		}
 	}
 /* This method takes a double and returns a double.
@@ -129,14 +131,40 @@ public class Calculate {
 		double c = b%10;
 		
 		if (c < 0.5) {
-			return (a - (c / 100);
+			return (a - (c / 100));
 		}else {
-			int d = a*100;
+			int d = (int) (a*100);
 			return (d/100.0+0.01);
 		}
+	}
 /* This method takes a double and an integer and returns a double.
  */
-//	public static double exponent(double a, int b) {
-		
-	}	
+	public static double exponent(double num, int power) {
+		double prod = 1;
+		while (prod < power) {
+			prod = num * num;
+		}
+		return prod;
+	}
+/* This method takes an integer and returns an interger.
+ */
+	public static int factorial(int num) {
+		int countnum = 1;
+		int increnum = 1;
+		while (countnum < num) {
+			countnum = countnum * increnum;
+			increnum ++;
+		}
+		return countnum;
+	}
+/* This method takes an integer and returns a boolean.
+ */
+	public static boolean isPrime(int num) {
+		for (int = i; int < num; i++) {
+			if(isDivisibleBy(num,i)) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
