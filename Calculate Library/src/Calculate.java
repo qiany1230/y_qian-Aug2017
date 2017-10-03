@@ -162,7 +162,7 @@ private static final boolean no = false;
 /* This method takes an integer and returns a boolean.
  */
 	public static boolean isPrime(int num) {
-		for (int = i; int < num; i++) {
+		for (int i = 2; i < num; i++) {
 			if(isDivisibleBy(num,i)) {
 				return false;
 			}
