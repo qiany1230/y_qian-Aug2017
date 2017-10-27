@@ -7,11 +7,11 @@
 
 import java.util.*;
 
-public class Split {
+public class Splitcode {
 	
 	public static void main(String[] args) {
-		String.split();
-		Splitting.split (" ");
+		String splitt = "I like apples!";
+		splitt.split (" ");
 		System.out.println(Arrays.toString("I like apples!".split(" ")));
 
 		// Your task Part 0
