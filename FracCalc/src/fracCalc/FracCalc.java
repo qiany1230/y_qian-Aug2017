@@ -22,11 +22,12 @@ public class FracCalc {
     public static String produceAnswer(String input)
     { 
         // TODO: Implement this function to produce the solution to the input
-    	String[] arr = userinput;
-    	String one = arr[1];
-    	String two = arr[2];
+    	String[] arr = input.split(" ");
+    	String one = arr[0];
+    	String two = arr[1];
+    	String three = arr[2];
         
-        return "";
+        return three;
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
