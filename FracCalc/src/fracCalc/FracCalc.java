@@ -7,8 +7,11 @@ public class FracCalc {
         // TODO: Read the input from the user and call produceAnswer with an equation
     	Scanner userinput = new Scanner(System.in);
     	String question = userinput.nextLine();
+    	String end = "quit";
+    	while (question == end) {
 		System.out.println(produceAnswer(question));
 		userinput.close();
+    	}
 	}
     
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
@@ -26,10 +29,24 @@ public class FracCalc {
     	String one = arr[0];
     	String two = arr[1];
     	String three = arr[2];
-        
-        return three;
+    //	System.out.println(splitOperands(three));
+    	String[] outputs = (splitOperands(input2)).split(",");
+    	String finaloutput = "whole:" + one1 +
     }
-
-    // TODO: Fill in the space below with any helper methods that you think you will need
     
+    public static String[] splitOperands(String input2) {
+    // TODO: Fill in the space below with any helper methods that you think you will need
+    	System.out.println(produceAnswer(input));
+    	String[] arr2 = input2.split("_");
+    	String one1 = arr2[0];
+    	String two = arr2[1];
+    	String[] arr3 = two.split("/");
+    	String before = arr3[0];
+    	String after = arr3[1];
+    	String[] output = {one1, before, after};
+    	return output;
+    	
+    	
+    	
+    }
 }
