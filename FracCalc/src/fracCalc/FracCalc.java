@@ -29,21 +29,24 @@ public class FracCalc {
     	String one = arr[0];
     	String two = arr[1];
     	String three = arr[2];
-    //	System.out.println(splitOperands(three));
-    	String[] outputs = (splitOperands(input2)).split(",");
-    	String finaloutput = "whole:" + one1 +
+    	String[] outputs = (splitOperands(three)).split(" ");
+    	String answer1 = outputs[0];
+    	String answer2 = outputs[1];
+    	String answer3 = outputs[2];
+    	String finaloutput = "whole:" + answer1 + " numerator:" + answer2 + " denominator:" + answer3;
+    	return finaloutput;
     }
     
-    public static String[] splitOperands(String input2) {
+    public static String splitOperands(String input2) {
     // TODO: Fill in the space below with any helper methods that you think you will need
-    	System.out.println(produceAnswer(input));
+    	if {
     	String[] arr2 = input2.split("_");
     	String one1 = arr2[0];
     	String two = arr2[1];
     	String[] arr3 = two.split("/");
     	String before = arr3[0];
     	String after = arr3[1];
-    	String[] output = {one1, before, after};
+    	String output = one1 + " " + before + " " + after;
     	return output;
     	
     	
