@@ -39,7 +39,14 @@ public class FracCalc {
     
     public static String splitOperands(String input2) {
     // TODO: Fill in the space below with any helper methods that you think you will need
-    	if {
+    	if (input.contains("_") && input.contains("/")){
+    		limited
+    	}
+    	else if (input.contains("/"))}
+    		//fraction
+        else {
+        	//whole
+        }
     	String[] arr2 = input2.split("_");
     	String one1 = arr2[0];
     	String two = arr2[1];
