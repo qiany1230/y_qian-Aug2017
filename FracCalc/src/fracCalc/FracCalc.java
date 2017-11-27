@@ -29,33 +29,37 @@ public class FracCalc {
     	String one = arr[0];
     	String two = arr[1];
     	String three = arr[2];
-    	String[] outputs = (splitOperands(three)).split(" ");
-    	String answer1 = outputs[0];
-    	String answer2 = outputs[1];
-    	String answer3 = outputs[2];
-    	String finaloutput = "whole:" + answer1 + " numerator:" + answer2 + " denominator:" + answer3;
+    	splitOperands(three);
+    	String finaloutput = (splitOperands(input));
     	return finaloutput;
     }
     
     public static String splitOperands(String input2) {
     // TODO: Fill in the space below with any helper methods that you think you will need
-    	if (input.contains("_") && input.contains("/")){
-    		limited
+    	if (input2.contains("_") && input2.contains("/")){
+    		//limited
+    		String[] arr2 = input2.split("_");
+    		String one1 = arr2[0];
+    		String two = arr2[1];
+    		String[] arr3 = two.split("/");
+    		String before = arr3[0];
+    		String after = arr3[1];
+        	String finaloutput = "whole:" + one1 + " numerator:" + before + " denominator:" + after;
+        	return finaloutput;
     	}
-    	else if (input.contains("/"))}
+    	else if (input2.contains("/")) {
     		//fraction
+    		String[] frac = input2.split("/");
+    		String top = frac[0];
+    		String bot = frac[1];
+    		String finaloutput = "whole:0 numerator:" + top + " denominator:" + bot;
+    		return finaloutput;
+    	}
         else {
         	//whole
+        	String finaloutput2 = "whole:" + input2 + "numerator:0 denominator:1";
+        	return finaloutput2;
         }
-    	String[] arr2 = input2.split("_");
-    	String one1 = arr2[0];
-    	String two = arr2[1];
-    	String[] arr3 = two.split("/");
-    	String before = arr3[0];
-    	String after = arr3[1];
-    	String output = one1 + " " + before + " " + after;
-    	return output;
-    	
     	
     	
     }
