@@ -8,10 +8,10 @@ public class FracCalc {
     	Scanner userinput = new Scanner(System.in);
     	String question = userinput.nextLine();
     	String end = "quit";
-    	while (question == end) {
-		System.out.println(produceAnswer(question));
-		userinput.close();
+    	while (question != end) {
+    		System.out.println(produceAnswer(question));
     	}
+    	userinput.close();
 	}
     
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
@@ -26,41 +26,44 @@ public class FracCalc {
     { 
         // TODO: Implement this function to produce the solution to the input
     	String[] arr = input.split(" ");
-    	String one = arr[0];
-    	String two = arr[1];
-    	String three = arr[2];
-    	splitOperands(three);
-    	String finaloutput = (splitOperands(input));
+    	String operand1 = arr[0];
+    	String operator = arr[1];
+    	String operand2 = arr[2];
+    
+    	String[] operand3 = (splitOperands(operand2));
+    	//create string to return
+    	String finaloutput = "whole:" + operand3[0] + " numerator:" + operand3[1]+ " denominator:" + operand3[2];
     	return finaloutput;
     }
     
-    public static String splitOperands(String input2) {
+    public static String[] splitOperands(String operand) {
     // TODO: Fill in the space below with any helper methods that you think you will need
-    	if (input2.contains("_") && input2.contains("/")){
-    		//limited
-    		String[] arr2 = input2.split("_");
-    		String one1 = arr2[0];
-    		String two = arr2[1];
-    		String[] arr3 = two.split("/");
-    		String before = arr3[0];
-    		String after = arr3[1];
-        	String finaloutput = "whole:" + one1 + " numerator:" + before + " denominator:" + after;
-        	return finaloutput;
+    	String whole="0";
+    	String num="0";
+    	String den="1";
+    	if (operand.contains("_") && operand.contains("/")){
+    		String[] arr2 = operand.split("_");
+    		whole = arr2[0];
+    		String frac = arr2[1];
+    		String[] fractionParts = frac.split("/");
+    		num = fractionParts[0];
+    		den = fractionParts[1];
+        	
+ 
     	}
-    	else if (input2.contains("/")) {
+    	else if (operand.contains("/")) {
     		//fraction
-    		String[] frac = input2.split("/");
-    		String top = frac[0];
-    		String bot = frac[1];
-    		String finaloutput = "whole:0 numerator:" + top + " denominator:" + bot;
-    		return finaloutput;
+    		String[] frac = operand.split("/");
+    		num = frac[0];
+    		den = frac[1];
+    		
     	}
         else {
         	//whole
-        	String finaloutput2 = "whole:" + input2 + "numerator:0 denominator:1";
-        	return finaloutput2;
+        	whole = operand;
         }
     	
-    	
+    	String[] parsed = {whole, num, den};
+    	return parsed;
     }
 }
