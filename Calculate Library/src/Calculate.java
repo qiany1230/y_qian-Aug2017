@@ -148,7 +148,7 @@ private static final boolean no = false;
 	}
 	
 	//
-/* This method takes an integer and returns an interger.
+/* This method takes an integer and returns an integer.
  */
 	public static int factorial(int num) {
 		int countnum = 1;
