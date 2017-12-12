@@ -9,13 +9,8 @@ public class FracCalc {
     	String question = userinput.nextLine();
     	String end = "quit";
     	while (question != end) {
-<<<<<<< HEAD
-		System.out.println(produceAnswer(question));
-		}
-=======
     		System.out.println(produceAnswer(question));
     	}
->>>>>>> branch 'master' of https://github.com/qiany1230/y_qian-Aug2017.git
     	userinput.close();
 	}
     
@@ -30,9 +25,6 @@ public class FracCalc {
     public static String produceAnswer(String input)
     { 
         // TODO: Implement this function to produce the solution to the input
-<<<<<<< HEAD
-   
-=======
     	String[] arr = input.split(" ");
     	String operand1 = arr[0];
     	String operator = arr[1];
@@ -43,13 +35,9 @@ public class FracCalc {
     	String finaloutput = "whole:" + operand3[0] + " numerator:" + operand3[1]+ " denominator:" + operand3[2];
     	return finaloutput;
     }
->>>>>>> branch 'master' of https://github.com/qiany1230/y_qian-Aug2017.git
     
     public static String[] splitOperands(String operand) {
     // TODO: Fill in the space below with any helper methods that you think you will need
-<<<<<<< HEAD
-    
-=======
     	String whole="0";
     	String num="0";
     	String den="1";
@@ -79,4 +67,3 @@ public class FracCalc {
     	return parsed;
     }
 }
->>>>>>> branch 'master' of https://github.com/qiany1230/y_qian-Aug2017.git
