@@ -2,7 +2,7 @@
  * September 5, 2017
  * This is the runner class for my Calculate Library methods
  */
-public class DoMath {
+public class DoMath { 
 	
 	public static void main(String[] args) {
 		System.out.println(Calculate.square(5));
@@ -23,5 +23,8 @@ public class DoMath {
 		System.out.println(Calculate.exponent(3.0,3));
 		System.out.println(Calculate.factorial(3));
 		System.out.println(Calculate.isPrime(6));
+		System.out.println(Calculate.gcf(4, 8));
+		System.out.println(Calculate.sqrt(16));
+		System.out.println(Calculate.quadForm(3, 4, 5));
 	}
 }
