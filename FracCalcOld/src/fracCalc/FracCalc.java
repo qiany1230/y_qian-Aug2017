@@ -48,15 +48,12 @@ public class FracCalc {
     		String[] fractionParts = frac.split("/");
     		num = fractionParts[0];
     		den = fractionParts[1];
-        	
- 
     	}
     	else if (operand.contains("/")) {
     		//fraction
     		String[] frac = operand.split("/");
     		num = frac[0];
     		den = frac[1];
-    		
     	}
         else {
         	//whole

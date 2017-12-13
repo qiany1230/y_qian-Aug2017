@@ -1,61 +1,33 @@
 package fracCalc;
 
+import java.util.Scanner;
 public class FracCalc {
-	
-public class Fraction {
-	private int whole;
-	private int numerator;
-	private int denominator;
-	private String wholeAsAString;
-	private String numAsAString;
-	private String denomAsAString;		
-}
-				
-   public static void main(String[] args) {
-	   
-	   
-        // TODO: Read the input from the user and call produceAnswer with an equation
 
+    public static void main(String[] args) 
+    {
+        //  Read the input from the user and call produceAnswer with an equation
+    	Scanner userinput = new Scanner(System.in);
+    	String question = userinput.nextLine();
+    	String end = "quit";
+    	while (question != end) {
+    		System.out.println(produceAnswer(question));
+    	}
+    	userinput.close();
 	}
     
-    // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
-    // This function takes a String 'input' and produces the result
-    //
-    // input is a fraction string that needs to be evaluated.  For your program, this will be the user input.
-    //      e.g. input ==> "1/2 + 3/4"
-    //        
-    // The function should return the result of the fraction after it has been calculated
-    //      e.g. return ==> "1_1/4"
-
-	
-   public Fraction (String operand) {
-		
-	}
+    public static String produceAnswer(String input)
+    { 
+        //  Implement this function to produce the solution to the input
+  
+    	String[] arr = input.split(" ");
+    	String operand1 = arr[0];
+    	String operator = arr[1];
+    	String operand2 = arr[2];
+        Fraction answer = new Fraction();
+    	return answer.toString();
+    	//create string to return
+    	
+    }
+    
    
-   // TODO: Fill in the space below with any helper methods that you think you will need
-
-    public static String produceAnswer(String input){
-}
-       
-    // TODO: Implement this function to produce the solution to the input
-
-	public void toMixedNumber() {
-		
-	}
-		
-	public void toImproper() {
-			
-	}
-		
-	public int toInt(String str) {
-			
-	}
-		
-	public void simplify() {
-			
-	}
-		
-	public String toString() {
-			
-	}
-}
+    }
