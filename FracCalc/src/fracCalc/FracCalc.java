@@ -9,13 +9,8 @@ public class FracCalc {
     	String question = userinput.nextLine();
     	String end = "quit";
     	while (question != end) {
-<<<<<<< HEAD
 		System.out.println(produceAnswer(question));
-		}
-=======
-    		System.out.println(produceAnswer(question));
-    	}
->>>>>>> branch 'master' of https://github.com/qiany1230/y_qian-Aug2017.git
+	}
     	userinput.close();
 	}
     
