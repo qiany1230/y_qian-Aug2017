@@ -13,4 +13,3 @@ INDEX VERSION 1.130+/Users/Ying/git/y_qian-Aug2017/y_qian-Aug2017/.metadata/.plu
 746144936.index
 2052924993.index
 3824738281.index
-4077260029.index
