@@ -30,15 +30,12 @@ public class ArraysLab3
 	public static int[] append(int[] arr, int num)
 	{
 		assert (arr.length > 0);
-		int[] finalArr = new int[arr.length + 1];
-		//Create new array for the append that's one value longer 
+		int[] arrAnswer = new int[arr.length + 1];
 		for(int i = 0; i <= arr.length - 1; i++){
-			finalArr[i] = arr[i];
-			//This sets every element at a certain index at finalArr = to arr.
+			arrAnswer[i] = arr[i];
 		}
-		finalArr[arr.length] = num;
-		//Since finalArr is 1 index longer, the last value equals to the int num.
-		return finalArr;
+		arrAnswer[arr.length] = num;
+		return arrAnswer;
 	}
 
 /*
@@ -50,16 +47,16 @@ public class ArraysLab3
 	public static int[] remove(int[] arr, int idx)
 	{
 		assert (arr.length >= 2);
-		int[] finalArr = new int[arr.length -1];
-		for(int i = 0; i < finalArr.length; i++){
+		int[] arrAnswer = new int[arr.length -1];
+		for(int i = 0; i < arrAnswer.length; i++){
 			if(i >= idx){
-				finalArr[i] = arr[i + 1];
+				arrAnswer[i] = arr[i + 1];
 			}
 			else{
-				finalArr[i] = arr[i];
+				arrAnswer[i] = arr[i];
 			}
 		}
-		return finalArr;
+		return arrAnswer;
 	}
 
 /*
