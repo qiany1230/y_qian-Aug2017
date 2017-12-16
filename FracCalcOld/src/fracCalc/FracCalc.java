@@ -1,4 +1,5 @@
 // Ying Qian
+// fraccalc project
 package fracCalc;
 import java.util.*;
 
