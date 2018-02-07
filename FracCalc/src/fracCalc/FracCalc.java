@@ -18,11 +18,7 @@ public class FracCalc {
     public static String produceAnswer(String input)
     { 
         //  Implement this function to produce the solution to the input
-  
-    	String[] arr = input.split(" ");
-    	String operand1 = arr[0];
-    	String operator = arr[1];
-    	String operand2 = arr[2];
+
         Fraction answer = new Fraction();
     	return answer.toString();
     	//create string to return
