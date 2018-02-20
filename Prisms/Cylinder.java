@@ -6,6 +6,13 @@
 
 public class Cylinder extends Prism {
 	
+	public double calcAreaOfBase() {
+		
+	}
+	public double calcPerimeter() {
+		
+	}
+	
 	private double radius;
 	
 	//inherits height from super call Prism

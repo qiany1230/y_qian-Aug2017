@@ -6,6 +6,12 @@
 
 public class RectangularPrism {
 	
+	public double calcAreaOfBase() {
+		
+	}
+	public double calcPerimeter() {
+		
+	}
 	
 }
 
