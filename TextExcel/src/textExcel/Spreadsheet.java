@@ -16,6 +16,15 @@ public class Spreadsheet implements Grid {
 	@Override
 	public String processCommand(String command) {
 		
+		String [] splitOfCommand = command.split(" ");
+		//get arrays and get location and assign hlelo
+		int numOfChar = command.length();
+		if (command.contains("=")) {
+			
+			
+		} else if (numOfChar <= 3) {
+			return ;
+		}
 		return "";
 	}
 
