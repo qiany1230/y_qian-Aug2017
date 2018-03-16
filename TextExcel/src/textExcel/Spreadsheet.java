@@ -2,12 +2,14 @@ package textExcel;
 
 public class Spreadsheet implements Grid {
 
-	private int numOfRows = 20;
-	private int numOfCols = 12;
+	private int numOfRows;
+	private int numOfCols;
 	private Cell[][] spreadsheet;
 	
 	public Spreadsheet () {
 		
+		this.numOfRows = 20;
+		this.numOfCols = 12;
 		spreadsheet = new EmptyCell[numOfRows][numOfCols];
 	}
 	
@@ -19,7 +21,6 @@ public class Spreadsheet implements Grid {
 
 	@Override
 	public int getRows() {
-		
 
 		return numOfRows;
 	}
@@ -27,7 +28,6 @@ public class Spreadsheet implements Grid {
 	@Override
 	public int getCols() {
 		
-
 		return numOfCols;
 	}
 
