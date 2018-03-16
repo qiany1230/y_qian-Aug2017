@@ -2,12 +2,14 @@ package textExcel;
 
 public class Spreadsheet implements Grid {
 
-	private int numOfRows = 20;
-	private int numOfCols = 12;
+	private int numOfRows;
+	private int numOfCols;
 	private Cell[][] spreadsheet;
 	
 	public Spreadsheet () {
 		
+		this.numOfRows = 20;
+		this.numOfCols = 12;
 		spreadsheet = new EmptyCell[numOfRows][numOfCols];
 	}
 	
@@ -33,14 +35,35 @@ public class Spreadsheet implements Grid {
 
 	@Override
 	public Cell getCell(Location loc) {
-
-		return null;
+		
+		Cell getCell = spreadsheet [loc.getRow()] [loc.getCol()];
+		return getCell;
 	}
 
 	@Override
 	public String getGridText() {
 		
-		return null;
+		String getgridText = "   |";
+		
+		for(char a = 'A'; a < 'M'; a++){
+			getgridText = getgridText + a + "         |";
+		}
+		
+		for(int i = 1; i <= numOfRows; i++){
+			
+			getgridText += "\n" + i;
+			
+			if(i < 10){
+				getgridText += "  |";
+			}else if(i >= 10){
+				getgridText += " |";
+			}
+			for(int j = 0; j < numOfCols; j++){
+				getgridText += spreadsheet[i-1][j].abbreviatedCellText() + "|";
+			}
+		}
+		getgridText += "\n";
+		return getgridText;
 	}
 
 }
