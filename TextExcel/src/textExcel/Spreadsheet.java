@@ -17,10 +17,12 @@ public class Spreadsheet implements Grid {
 	public String processCommand(String command) {
 		
 		String [] splitOfCommand = command.split(" ");
-		//get arrays and get location and assign hlelo
+		String userCommand = splitOfCommand[2];
+		int colNum = Character.toUpperCase(splitOfCommand[0].charAt(0)) - 'A';
+		int rowNum = splitOfCommand[0].charAt(1); 
 		int numOfChar = command.length();
 		if (command.contains("=")) {
-			
+			Cell [][] spreadsheet = new TextCell[rowNum][colNum];
 			
 		} else if (numOfChar <= 3) {
 			return ;

@@ -7,14 +7,14 @@ public class SpreadsheetLocation implements Location {
     @Override
     public int getRow() {
     		
-    		int RowNum = Integer.parseInt(cellName.substring(1)) - 1;    
+    	int RowNum = Integer.parseInt(cellName.substring(1)) - 1;    
         return RowNum;
     }
 
     @Override
     public int getCol() {
 
-    	    int ColNum = cellName.charAt(0) - 'A';
+    	int ColNum = cellName.charAt(0) - 'A';
         return ColNum;
     }
     
