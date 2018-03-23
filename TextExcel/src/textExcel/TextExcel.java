@@ -10,8 +10,7 @@ public class TextExcel {
 	    Scanner userinput = new Scanner(System.in);
 	    Spreadsheet mySpreadsheet = new Spreadsheet();
 	    String command = userinput.nextLine();
-	    String end = "quit";
-	    	while (end.toLowerCase() != ("quit")) {
+	    	while (command.toLowerCase() != ("quit")) {
 	    		System.out.println(mySpreadsheet.processCommand(command));
 	    	}
 	    	userinput.close();

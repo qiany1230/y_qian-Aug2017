@@ -22,12 +22,17 @@ public class Spreadsheet implements Grid {
 		int rowNum = splitOfCommand[0].charAt(1); 
 		int numOfChar = command.length();
 		if (command.contains("=")) {
-			Cell [][] spreadsheet = new TextCell[rowNum][colNum];
+			//spreadsheet [rowNum][colNum] = 
 			
-		} else if (numOfChar <= 3) {
-			return ;
+		} else if(numOfChar <= 3) {
+			//return ;
+			
+		} else if(command.contains("clear") && command.contains(" ")) {
+			//return "";
+			
+		} else {
+			return;
 		}
-		return "";
 	}
 
 	@Override
