@@ -16,22 +16,32 @@ public class Spreadsheet implements Grid {
 	@Override
 	public String processCommand(String command) {
 		
-		String [] splitOfCommand = command.split(" ");
-		String userCommand = splitOfCommand[2];
-		int colNum = Character.toUpperCase(splitOfCommand[0].charAt(0)) - 'A';
-		int rowNum = splitOfCommand[0].charAt(1); 
+		String [] splitOfCommand = command.split(" ");	
+		 
 		int numOfChar = command.length();
 		if (command.contains("=")) {
-			//spreadsheet [rowNum][colNum] = 
+
+			String userCommand = splitOfCommand[2];
+			int colNum = Character.toUpperCase(splitOfCommand[0].charAt(0)) - 'A';
+			int rowNum = splitOfCommand[0].charAt(1);
+			//spreadsheet [rowNum][colNum] = userCommand
+			return getGridText();
 			
 		} else if(numOfChar <= 3) {
-			//return ;
+
+			String commandClear = splitOfCommand[1];
+			int colNum = Character.toUpperCase(splitOfCommand[1].charAt(0)) - 'A';
+			int rowNum = splitOfCommand[1].charAt(1);
+			return getGridText();
 			
 		} else if(command.contains("clear") && command.contains(" ")) {
-			//return "";
+		
+			return getGridText();
 			
 		} else {
-			return;
+			
+			//spreadsheet.le;
+			return getGridText();
 		}
 	}
 
@@ -70,7 +80,7 @@ public class Spreadsheet implements Grid {
 			if(i < 10){
 				getgridText += "  |";
 			}else if(i >= 10){
-				getgridText += " |";
+				getgridText += "  |";
 			}
 			for(int j = 0; j < numOfCols; j++){
 				getgridText += spreadsheet[i-1][j].abbreviatedCellText() + "|";
