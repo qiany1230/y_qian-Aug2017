@@ -16,32 +16,33 @@ public class Spreadsheet implements Grid {
 	@Override
 	public String processCommand(String command) {
 		
+		String [] splitOfCommand = command.split(" ", 3);
 		int numOfChar = command.length();
 		
 		//assignment of string values
 		if (command.contains("=")) {
-			String [] splitOfCommand = command.split(" ");	
-			String cellLocation = splitOfCommand[0];
-			String userCommand = splitOfCommand[2];
-			assignCellValue(cellLocation, userCommand);
+			String cellLoc = splitOfCommand[0];
+			String userInput = splitOfCommand[2];
+			assignCellValue(cellLoc, userInput);
 			return getGridText();
 			
 		//cell inspection
-		} else if(numOfChar <= 3) {
+		} else if(numOfChar == 2 && numOfChar == 3) {
 			SpreadsheetLocation cellLoc = new SpreadsheetLocation(command);
 			return getCell(cellLoc).fullCellText();
 			
 		//clearing a particular cell
 		} else if(command.toLowerCase().contains("clear") && command.contains(" ")) {
-			String [] splitOfCommand = command.split(" ");
 			String cellLoc = splitOfCommand[1];
 			clearAssignedCell(cellLoc);
 			return getGridText();
 			
 		//clearing the entire sheet
-		} else {
+		} else if (command.equalsIgnoreCase("clear")) {
 			return getGridText();
 			
+		} else {
+			return "";
 		}
 	}
 
