@@ -16,32 +16,32 @@ public class Spreadsheet implements Grid {
 	@Override
 	public String processCommand(String command) {
 		
-		String [] splitOfCommand = command.split(" ");	
-		 
 		int numOfChar = command.length();
-		if (command.contains("=")) {
-
-			String userCommand = splitOfCommand[2];
-			int colNum = Character.toUpperCase(splitOfCommand[0].charAt(0)) - 'A';
-			int rowNum = splitOfCommand[0].charAt(1);
-			//spreadsheet [rowNum][colNum] = userCommand
-			return getGridText();
-			
-		} else if(numOfChar <= 3) {
-
-			String commandClear = splitOfCommand[1];
-			int colNum = Character.toUpperCase(splitOfCommand[1].charAt(0)) - 'A';
-			int rowNum = splitOfCommand[1].charAt(1);
-			return getGridText();
-			
-		} else if(command.contains("clear") && command.contains(" ")) {
 		
+		//assignment of string values
+		if (command.contains("=")) {
+			String [] splitOfCommand = command.split(" ");	
+			String cellLocation = splitOfCommand[0];
+			String userCommand = splitOfCommand[2];
+			assignCellValue(cellLocation, userCommand);
 			return getGridText();
 			
+		//cell inspection
+		} else if(numOfChar <= 3) {
+			SpreadsheetLocation cellLoc = new SpreadsheetLocation(command);
+			return getCell(cellLoc).fullCellText();
+			
+		//clearing a particular cell
+		} else if(command.toLowerCase().contains("clear") && command.contains(" ")) {
+			String [] splitOfCommand = command.split(" ");
+			String cellLoc = splitOfCommand[1];
+			clearAssignedCell(cellLoc);
+			return getGridText();
+			
+		//clearing the entire sheet
 		} else {
-			
-			//spreadsheet.le;
 			return getGridText();
+			
 		}
 	}
 
@@ -89,5 +89,18 @@ public class Spreadsheet implements Grid {
 		getgridText += "\n";
 		return getgridText;
 	}
-
+	
+	public void assignCellValue (String cellLoc, String userInput) {
+		
+		SpreadsheetLocation cell = new SpreadsheetLocation(cellLoc);
+		spreadsheet [cell.getRow()] [cell.getCol()] = new TextCell(userInput);
+	}
+	
+	public void clearAssignedCell (String cellLoc) {
+		
+		SpreadsheetLocation clearcell = new SpreadsheetLocation(cellLoc);
+		spreadsheet [clearcell.getRow()] [clearcell.getCol()] = new EmptyCell();
+	}
+	
+	
 }
