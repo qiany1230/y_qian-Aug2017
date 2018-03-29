@@ -14,7 +14,7 @@ public class SpreadsheetLocation implements Location {
     @Override
     public int getCol() {
 
-    	int ColNum = cellName.charAt(0) - 'A';
+    	int ColNum = cellName.toUpperCase().charAt(0) - 'A';
         return ColNum;
     }
     

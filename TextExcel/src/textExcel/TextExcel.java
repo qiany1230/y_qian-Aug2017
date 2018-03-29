@@ -7,14 +7,12 @@ public class TextExcel {
 	
 	public static void main(String[] args) {
 		
-		TestsALL.Helper th = new TestsALL.Helper();
-		System.out.println(th.getText());
-		
 	    Scanner userinput = new Scanner(System.in);
 	    Spreadsheet mySpreadsheet = new Spreadsheet();
 	    String command = userinput.nextLine();
-	    	while (command.toLowerCase() != ("quit")) {
+	    	while (!command.toLowerCase().equals("quit")) {
 	    		System.out.println(mySpreadsheet.processCommand(command));
+	    		command = userinput.nextLine();
 	    	}
 	    	userinput.close();
 	}

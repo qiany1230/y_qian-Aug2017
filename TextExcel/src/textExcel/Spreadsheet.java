@@ -2,20 +2,22 @@ package textExcel;
 
 public class Spreadsheet implements Grid {
 
-	private int numOfRows;
-	private int numOfCols;
-	private Cell[][] spreadsheet;
+	private int numOfRows = 20;
+	private int numOfCols = 12;
+	private Cell[][] spreadsheet =new Cell[numOfRows][numOfCols];
 	
 	public Spreadsheet () {
 		
-		this.numOfRows = 20;
-		this.numOfCols = 12;
-		spreadsheet = new EmptyCell[numOfRows][numOfCols];
+		for (int r = 0; r < getRows(); r++) {
+			for (int c = 0; c < getCols(); c++) {
+				spreadsheet [r][c] = new EmptyCell();
+			}
+		}
 	}
 	
 	@Override
 	public String processCommand(String command) {
-		
+	
 		String [] splitOfCommand = command.split(" ", 3);
 		int numOfChar = command.length();
 		
@@ -27,18 +29,23 @@ public class Spreadsheet implements Grid {
 			return getGridText();
 			
 		//cell inspection
-		} else if(numOfChar == 2 && numOfChar == 3) {
+		} else if(numOfChar == 2 || numOfChar == 3) {
 			SpreadsheetLocation cellLoc = new SpreadsheetLocation(command);
 			return getCell(cellLoc).fullCellText();
-			
+		
 		//clearing a particular cell
-		} else if(command.toLowerCase().contains("clear") && command.contains(" ")) {
+		} else if(command.toLowerCase().contains("clear ")) {
 			String cellLoc = splitOfCommand[1];
 			clearAssignedCell(cellLoc);
 			return getGridText();
-			
+
 		//clearing the entire sheet
 		} else if (command.equalsIgnoreCase("clear")) {
+			for (int r = 0; r < getRows(); r++) {
+				for (int c = 0; c < getCols(); c++) {
+					spreadsheet [r][c] = new EmptyCell();
+				}
+			}
 			return getGridText();
 			
 		} else {
@@ -68,27 +75,27 @@ public class Spreadsheet implements Grid {
 	@Override
 	public String getGridText() {
 		
-		String getgridText = "   |";
+		String gridText = "   |";
 		
 		for(char a = 'A'; a < 'M'; a++){
-			getgridText = getgridText + a + "         |";
+			gridText = gridText + a + "         |";
 		}
 		
 		for(int i = 1; i <= numOfRows; i++){
 			
-			getgridText += "\n" + i;
+			gridText += "\n" + i;
 			
 			if(i < 10){
-				getgridText += "  |";
+				gridText += "  |";
 			}else if(i >= 10){
-				getgridText += "  |";
+				gridText += " |";
 			}
 			for(int j = 0; j < numOfCols; j++){
-				getgridText += spreadsheet[i-1][j].abbreviatedCellText() + "|";
+				gridText += spreadsheet[i-1][j].abbreviatedCellText() + "|";
 			}
 		}
-		getgridText += "\n";
-		return getgridText;
+		gridText += "\n";
+		return gridText;
 	}
 	
 	public void assignCellValue (String cellLoc, String userInput) {
