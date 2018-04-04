@@ -38,7 +38,7 @@ public class Spreadsheet implements Grid {
 			return getGridText();
 			
 		//clearing the entire sheet
-		} else if (command.equalsIgnoreCase("clear")) {
+		} else if (!command.equalsIgnoreCase("clear")) {
 			return getGridText();
 			
 		} else {
