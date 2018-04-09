@@ -31,3 +31,4 @@ public class TextCell implements Cell {
 	}
 
 }
+
