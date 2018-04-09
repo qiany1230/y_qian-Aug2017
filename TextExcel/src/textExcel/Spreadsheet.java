@@ -48,6 +48,21 @@ public class Spreadsheet implements Grid {
 			}
 			return getGridText();
 			
+		//ValueCell
+		} else if (command) {
+			
+			return;
+			
+		//PercentCell
+		} else if (command.contains("%")) {
+			
+			return;
+			
+		//FormulaCell
+		} else if (command.contains("(")) {
+			
+			return;
+			
 		} else {
 			return "";
 		}

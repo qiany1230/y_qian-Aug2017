@@ -2,6 +2,7 @@ package textExcel;
 
 import java.util.Scanner;
 
+import java.io.FileNotFoundException;
 public class TextExcel {
 	
 	public static void main(String[] args) {
