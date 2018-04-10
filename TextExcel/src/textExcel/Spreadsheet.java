@@ -48,7 +48,7 @@ public class Spreadsheet implements Grid {
 			}
 			return getGridText();
 			
-		//ValueCell
+/*		//ValueCell
 		} else if (command) {
 			
 			return;
@@ -62,7 +62,7 @@ public class Spreadsheet implements Grid {
 		} else if (command.contains("(")) {
 			
 			return;
-			
+	*/		
 		} else {
 			return "";
 		}
