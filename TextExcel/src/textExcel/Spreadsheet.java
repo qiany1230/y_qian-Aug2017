@@ -48,21 +48,6 @@ public class Spreadsheet implements Grid {
 			}
 			return getGridText();
 			
-		//ValueCell
-		} else if (command) {
-			
-			return;
-			
-		//PercentCell
-		} else if (command.contains("%")) {
-			
-			return;
-			
-		//FormulaCell
-		} else if (command.contains("(")) {
-			
-			return;
-			
 		} else {
 			return "";
 		}
@@ -92,20 +77,20 @@ public class Spreadsheet implements Grid {
 		
 		String gridText = "   |";
 		
-		for(char a = 'A'; a < 'M'; a++){
+		for (char a = 'A'; a < 'M'; a++){
 			gridText = gridText + a + "         |";
 		}
 		
-		for(int i = 1; i <= numOfRows; i++){
+		for (int i = 1; i <= numOfRows; i++){
 			
 			gridText += "\n" + i;
 			
-			if(i < 10){
+			if (i < 10){
 				gridText += "  |";
-			}else if(i >= 10){
+			}else if (i >= 10){
 				gridText += " |";
 			}
-			for(int j = 0; j < numOfCols; j++){
+			for (int j = 0; j < numOfCols; j++){
 				gridText += spreadsheet[i-1][j].abbreviatedCellText() + "|";
 			}
 		}
@@ -116,7 +101,18 @@ public class Spreadsheet implements Grid {
 	public void assignCellValue (String cellLoc, String userInput) {
 		
 		SpreadsheetLocation cell = new SpreadsheetLocation(cellLoc);
-		spreadsheet [cell.getRow()] [cell.getCol()] = new TextCell(userInput);
+		if (userInput.contains("\"")) {
+			spreadsheet [cell.getRow()] [cell.getCol()] = new TextCell(userInput);
+		
+		}else if (userInput.contains("%")) {
+			spreadsheet [cell.getRow()] [cell.getCol()] = new PercentCell(userInput);
+		
+		}else if (userInput.contains("(")) {
+			spreadsheet [cell.getRow()] [cell.getCol()] = new FormulaCell(userInput);
+		
+		}else {
+			spreadsheet [cell.getRow()] [cell.getCol()] = new ValueCell(userInput);
+		}
 	}
 	
 	public void clearAssignedCell (String cellLoc) {
