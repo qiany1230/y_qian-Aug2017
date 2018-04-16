@@ -47,7 +47,7 @@ public class Spreadsheet implements Grid {
 				}
 			}
 			return getGridText();
-			
+
 		} else {
 			return "";
 		}
