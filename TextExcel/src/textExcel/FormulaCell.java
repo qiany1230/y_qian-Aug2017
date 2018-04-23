@@ -1,22 +1,10 @@
 package textExcel;
 
-public class FormulaCell extends RealCells {
+public class FormulaCell extends RealCell {
 
 	public FormulaCell (String userInput) {
 		
 		super (userInput);
-	}
-	
-	@Override
-	public String abbreviatedCellText() {
-
-		return null;
-	}
-
-	@Override
-	public String fullCellText() {
-
-		return null;
 	}
 
 	@Override
