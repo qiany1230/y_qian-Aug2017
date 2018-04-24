@@ -9,19 +9,19 @@ public class PercentCell extends RealCell{
 	
 	@Override
 	public String abbreviatedCellText() {
-		int abbreviated = 0;
-		int input = Integer.parseInt(super.getInput());
-		int decimal = super.getInput().indexOf(".");
-		for (int i = decimal - 1; i <= 0; i--) {
-			abbreviated.add(input[i]);
-		}
-		return "";
+		String abbreviated = super.getInput().substring(0, super.getInput().indexOf('.')) + "%";
+		for (int i = abbreviated.length(); i <= 9; i++)
+			abbreviated += " ";
+		return abbreviated;
 	}
 
 	@Override
 	public String fullCellText() {
-
-		return "" + super.getDoubleValue() / 100;
+		
+		String input = super.getInput().substring(0, super.getInput().length()-1);
+		double doubleValue = Double.parseDouble(input);
+		return "" + doubleValue / 100;
 	}
+	
 }
 
