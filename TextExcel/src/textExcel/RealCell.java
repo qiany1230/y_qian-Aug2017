@@ -23,12 +23,11 @@ public abstract class RealCell implements Cell {
 	@Override
 	public String abbreviatedCellText() {
 
-		String abbreviated = "";
-		if (input.length() > 10) {
-			abbreviated = input.substring(0, 10);
+		String abbreviated = "" + getDoubleValue();
+		if (abbreviated.length() > 10) {
+			abbreviated = abbreviated.substring(0, 10);
 		} else {
-			abbreviated += input;
-			for (int i= 0; i < 10 - input.length(); i++) {
+			for (int i = abbreviated.length(); i < 10; i++) {
 				abbreviated += " ";
 			}
 		}
