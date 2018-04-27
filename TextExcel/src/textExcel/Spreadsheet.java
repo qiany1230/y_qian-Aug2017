@@ -108,7 +108,7 @@ public class Spreadsheet implements Grid {
 			spreadsheet [cell.getRow()] [cell.getCol()] = new PercentCell(userInput);
 		
 		}else if (userInput.contains("(")) {
-			spreadsheet [cell.getRow()] [cell.getCol()] = new FormulaCell(userInput);
+			spreadsheet [cell.getRow()] [cell.getCol()] = new FormulaCell(userInput, this);
 		
 		}else {
 			spreadsheet [cell.getRow()] [cell.getCol()] = new ValueCell(userInput);
