@@ -71,6 +71,12 @@ public class Spreadsheet implements Grid {
 		Cell getCell = spreadsheet [loc.getRow()] [loc.getCol()];
 		return getCell;
 	}
+	
+	public Cell getCell(int i, int j) {
+		
+		Cell getCell = spreadsheet [j] [i];
+		return getCell;
+	}
 
 	@Override
 	public String getGridText() {

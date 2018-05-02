@@ -24,6 +24,11 @@ public class TextCell implements Cell {
 		return abbreviated;
 
 	}
+	
+	public double getDoubleValue() {
+		
+		return 0;
+	}
 
 	@Override
 	public String fullCellText() {

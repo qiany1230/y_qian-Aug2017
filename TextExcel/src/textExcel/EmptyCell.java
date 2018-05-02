@@ -11,6 +11,10 @@ public class EmptyCell implements Cell {
 		return "          ";
 	}
 	
+	public double getDoubleValue() {
+		return 0;
+	}
+	
 	// text for individual cell inspection, not truncated or padded
 	public String fullCellText() {
 		return "";
