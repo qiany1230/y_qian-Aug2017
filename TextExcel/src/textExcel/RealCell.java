@@ -21,6 +21,7 @@ public abstract class RealCell implements Cell {
 	}
 	
 	@Override
+	//for spreadsheet display, truncated or padded to 10 spaces exactly
 	public String abbreviatedCellText() {
 
 		String abbreviated = "" + getDoubleValue();

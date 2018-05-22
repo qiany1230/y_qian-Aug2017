@@ -17,22 +17,27 @@ public class FormulaCell extends RealCell {
 
 		double result = 0;
 		double operand = 0;
+		//if command has sum and avg
 		if (array[1].equals("SUM") || array[1].equals("AVG")) {
 			int numOfTimes = 0;
 			String[] range = array[2].split("-");
 			SpreadsheetLocation start = new SpreadsheetLocation(range[0]);
 			SpreadsheetLocation end = new SpreadsheetLocation(range[1]);
+			//get the value of the specified cell
 			for (int i = start.getCol(); i <= end.getCol(); i++) {
 				for (int j = start.getRow(); j <= end.getRow(); j++) {
 					result += spreadsheet.getCell(i, j).getDoubleValue();
+					//sum
 					numOfTimes ++;
 				}
 			}
+			//avg
 			if (array[1].equals("AVG")) {
 				result = result / numOfTimes;
 			}
 		} else {
 			result = getValue(array[1]);
+			//math operations
 			for (int i = 3; i < array.length - 1; i += 2) {
 				operand = getValue(array[i]);
 				String operator = array[i - 1];
@@ -53,6 +58,7 @@ public class FormulaCell extends RealCell {
 	public double getValue(String input) {
 
 		double operand = 0;
+		//if the input has letters, then get the value of the cell
 		if (input.matches(".*[a-zA-Z]+.*")) {
 			SpreadsheetLocation value = new SpreadsheetLocation(input);
 			Cell cell = spreadsheet.getCell(value);

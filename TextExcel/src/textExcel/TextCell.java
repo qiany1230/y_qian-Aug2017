@@ -5,7 +5,7 @@ public class TextCell implements Cell {
 	private String text;
 	
 	public TextCell (String text) {
-		
+		//getting rid of the ( )
 		this.text = text.substring(1, text.length() - 1);
 	}
 	
@@ -32,6 +32,7 @@ public class TextCell implements Cell {
 
 	@Override
 	public String fullCellText() {
+		//adding quotation marks
 		return "\"" + this.text + "\"";
 	}
 

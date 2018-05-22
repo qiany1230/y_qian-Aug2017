@@ -7,7 +7,7 @@ public class Spreadsheet implements Grid {
 	private Cell[][] spreadsheet =new Cell[numOfRows][numOfCols];
 	
 	public Spreadsheet () {
-		
+		//making all the cell empty cells
 		for (int r = 0; r < getRows(); r++) {
 			for (int c = 0; c < getCols(); c++) {
 				spreadsheet [r][c] = new EmptyCell();
@@ -66,12 +66,14 @@ public class Spreadsheet implements Grid {
 	}
 
 	@Override
+	//getcell using a location (overloading)
 	public Cell getCell(Location loc) {
 		
 		Cell getCell = spreadsheet [loc.getRow()] [loc.getCol()];
 		return getCell;
 	}
 	
+	//getcell using two ints (overloading)
 	public Cell getCell(int i, int j) {
 		
 		Cell getCell = spreadsheet [j] [i];
@@ -79,6 +81,7 @@ public class Spreadsheet implements Grid {
 	}
 
 	@Override
+	//creating the grid
 	public String getGridText() {
 		
 		String gridText = "   |";
@@ -107,22 +110,23 @@ public class Spreadsheet implements Grid {
 	public void assignCellValue (String cellLoc, String userInput) {
 		
 		SpreadsheetLocation cell = new SpreadsheetLocation(cellLoc);
+		//textcell
 		if (userInput.contains("\"")) {
 			spreadsheet [cell.getRow()] [cell.getCol()] = new TextCell(userInput);
-		
+		//percentcell
 		}else if (userInput.contains("%")) {
 			spreadsheet [cell.getRow()] [cell.getCol()] = new PercentCell(userInput);
-		
+		//formulacell
 		}else if (userInput.contains("(")) {
 			spreadsheet [cell.getRow()] [cell.getCol()] = new FormulaCell(userInput, this);
-		
+		//valuecell
 		}else {
 			spreadsheet [cell.getRow()] [cell.getCol()] = new ValueCell(userInput);
 		}
 	}
 	
 	public void clearAssignedCell (String cellLoc) {
-		
+		//change the cell to an emptycell
 		SpreadsheetLocation clearcell = new SpreadsheetLocation(cellLoc);
 		spreadsheet [clearcell.getRow()] [clearcell.getCol()] = new EmptyCell();
 	}
